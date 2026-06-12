@@ -1,0 +1,178 @@
+@plugin "flyonui" {
+  themes:
+    app-light --default,
+    app-dark --prefersdark;
+}
+
+/* =========================
+   CUSTOM LIGHT THEME
+   ========================= */
+@plugin "flyonui/theme" {
+  name: "app-light";
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: white; /* bg color of body */
+  --color-base-content: black; /*  color of text inside body */
+
+  /* Brand */
+  --color-primary: #7fd3df;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #255977;
+
+  --color-accent-content: #ffffff;
+
+  /* Neutral */
+  --color-neutral: #777777;
+  --color-neutral-content: #ffffff;
+
+  /* Status */
+  --color-info: #54a4af;
+  --color-info-content: #ffffff;
+
+  --color-success: #22c55e;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #ffffff;
+
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+}
+
+/* =========================
+   CUSTOM DARK THEME
+   ========================= */
+@plugin "flyonui/theme" {
+  name: "app-dark";
+  /* prefersdark: false; does not disable the dark theme itself.
+   It only means the theme is not automatically chosen from the OS
+    dark-mode preference. */
+  prefersdark: false;
+  color-scheme: dark;
+
+  --color-base-100: #101214; /* bg color of body */
+  --color-base-content: white; /*  color of text inside body */
+
+  --color-primary: #54a4af;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #7eb8d3;
+  --color-secondary-content: #000000;
+
+  --color-accent: #54a4af;
+  --color-accent-content: #ffffff;
+
+  --color-neutral: #8e8e8e;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #54a4af;
+  --color-info-content: #ffffff;
+
+  --color-success: #22c55e;
+  --color-success-content: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-warning-content: #000000;
+
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+}
+
+/* =========================
+   PROJECT TOKENS
+   ========================= */
+@theme {
+  --font-messiri: "El Messiri", sans-serif;
+
+  --header-height: 70px;
+  --section-gap: 7rem; /*  100px */
+
+  --color-cyan: #d6f7fe;
+  --color-card-text: #255977;
+}
+
+/* =========================
+   DYNAMIC UTILITIES
+   ========================= */
+@layer utilities {
+  /* `.text-<n>px` and `.rounded-<n>px` are generated from tailwind.config.js. */
+
+  /* Custom container */
+  .container {
+    @apply mx-auto w-full;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 80rem;
+    }
+  }
+
+  .section-gap {
+    margin-block: var(--section-gap);
+  }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .center-flex {
+    @apply flex items-center justify-center;
+  }
+
+  .text-card {
+    color: var(--color-card-text);
+  }
+}
+
+/* =========================
+   BASE
+   ========================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-messiri);
+    /* font-family: "El Messiri", sans-serif; */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  main {
+    min-height: 50vh;
+    margin-top: var(--header-height);
+  }
+}
+
+/* 
+.navlink.active{
+  background-color: red;
+} */
+
+.carousel-next,
+.carousel-prev {
+  position: initial;
+}
+
+.carousel-box {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #eaeaea;
+}
+.carousel-pagination {
+  border: 1px solid #eaeaea;
+  padding: 15px;
+  border-radius: 40px;
+}
