@@ -1,5 +1,6 @@
 import categoryImg1 from "../../../assets/imgs/home/category-img1.webp";
-import categoryImg2 from "../../../assets/imgs/home/category-img2.webp";
+// import categoryImg2 from "../../../assets/imgs/home/category-img2.webp";
+import categoryImg2 from "@/imgs/home/";
 import { Link } from "react-router-dom";
 
 const categoriesArr = [
