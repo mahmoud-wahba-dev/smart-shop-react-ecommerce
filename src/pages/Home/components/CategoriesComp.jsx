@@ -9,6 +9,7 @@ const categoriesArr = [
     link: "/childern-boys",
     img: categoryImg1,
     imgAlt: "childern-boys",
+    secBgColor: "#D6F7FE",
   },
   {
     title: "فساتين بناتي",
@@ -16,6 +17,7 @@ const categoriesArr = [
     link: "/childern-girls",
     img: categoryImg2,
     imgAlt: "childern-girls",
+    secBgColor: "#FFDBDF",
   },
 ];
 const CategoriesComp = () => {
@@ -30,8 +32,14 @@ const CategoriesComp = () => {
               </div>
               <div>
                 <h5 className="font-bold text-32px mb-2.5"> {item.title} </h5>
-                <p className="font-medium text-24px mb-2.5"> {item.subtitle} </p>
-                <Link to={item.link} className="font-normal text-20px link link-animated">
+                <p className="font-medium text-24px mb-2.5">
+                  {" "}
+                  {item.subtitle}{" "}
+                </p>
+                <Link
+                  to={item.link}
+                  className="font-normal text-20px link link-animated"
+                >
                   تسوق الان
                 </Link>
               </div>

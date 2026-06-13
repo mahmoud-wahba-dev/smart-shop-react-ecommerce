@@ -9,25 +9,20 @@ const FlyonInit = () => {
   const location = useLocation();
 
   useEffect(() => {
+    let isMounted = true;
+
     const initFlyonUI = async () => {
       await loadFlyonUI();
+
+      if (!isMounted) return;
+
+      window.HSStaticMethods?.autoInit?.();
     };
 
     initFlyonUI();
-  }, []);
-
-  useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      if (
-        window.HSStaticMethods &&
-        typeof window.HSStaticMethods.autoInit === "function"
-      ) {
-        window.HSStaticMethods.autoInit();
-      }
-    }, 100);
 
     return () => {
-      window.clearTimeout(timeoutId);
+      isMounted = false;
     };
   }, [location.pathname]);
 
