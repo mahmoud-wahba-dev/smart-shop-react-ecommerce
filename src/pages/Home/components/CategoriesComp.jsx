@@ -1,6 +1,5 @@
 import categoryImg1 from "../../../assets/imgs/home/category-img1.webp";
-// import categoryImg2 from "../../../assets/imgs/home/category-img2.webp";
-import categoryImg2 from "@/imgs/home/";
+import categoryImg2 from "../../../assets/imgs/home/category-img2.webp";
 import { Link } from "react-router-dom";
 
 const categoriesArr = [
@@ -27,7 +26,11 @@ const CategoriesComp = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           {categoriesArr.map((item, idx) => (
-            <div className="bg-cyan p-1 flex items-center gap-1 text-black">
+            <div
+            key={item.idx}
+              style={{ backgroundColor: item.secBgColor }}
+              className={`p-1 flex items-center gap-1 text-black `}
+            >
               <div>
                 <img src={item.img} alt={item.imgAlt} />
               </div>
