@@ -27,7 +27,7 @@ const CategoriesComp = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           {categoriesArr.map((item, idx) => (
             <div
-            key={item.idx}
+            key={idx}
               style={{ backgroundColor: item.secBgColor }}
               className={`p-1 flex items-center gap-1 text-black `}
             >
